@@ -2,4 +2,4 @@
 source_root_dir = '/home/joshua/ROS_projects/pickAndPlaceKuka/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/home/joshua/ROS_projects/pickAndPlaceKuka/devel;/opt/ros/noetic'.split(';') if '/home/joshua/ROS_projects/pickAndPlaceKuka/devel;/opt/ros/noetic' != '' else []
+underlay_workspaces = '/opt/ros/noetic'.split(';') if '/opt/ros/noetic' != '' else []
