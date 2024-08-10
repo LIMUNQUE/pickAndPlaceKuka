@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/joshua/ROS_projects/pickAndPlaceKuka/install/setup.sh

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: kr3_gazebo
+    relative_path: urdf/kr3_main.urdf
+    xacro_args: gripper_2f:=true camera:=true
+  SRDF:
+    relative_path: config/kr3_main.srdf
+  CONFIG:
+    author_name: Joshua Alexander Cobos Valle
+    author_email: josalcob@espol.edu.ec
+    generated_timestamp: 1723326563

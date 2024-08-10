@@ -1,0 +1,8 @@
+prefix=/home/joshua/ROS_projects/pickAndPlaceKuka/install
+
+Name: kuka_arm_2f_moveit
+Description: Description of kuka_arm_2f_moveit
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

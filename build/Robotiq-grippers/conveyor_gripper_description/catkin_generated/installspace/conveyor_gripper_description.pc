@@ -1,0 +1,8 @@
+prefix=/home/joshua/ROS_projects/pickAndPlaceKuka/install
+
+Name: conveyor_gripper_description
+Description: Description of conveyor_gripper_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

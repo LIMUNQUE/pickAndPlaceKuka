@@ -1,0 +1,8 @@
+prefix=/home/joshua/ROS_projects/pickAndPlaceKuka/install
+
+Name: robotiq_2f_85_description
+Description: Description of robotiq_2f_85_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

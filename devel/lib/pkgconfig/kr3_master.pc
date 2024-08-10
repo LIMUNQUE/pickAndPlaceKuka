@@ -1,0 +1,8 @@
+prefix=/home/joshua/ROS_projects/pickAndPlaceKuka/devel
+
+Name: kr3_master
+Description: Description of kr3_master
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
