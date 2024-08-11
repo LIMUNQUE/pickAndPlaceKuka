@@ -69,6 +69,7 @@ all: kuka_experimental/kuka_kr3_support/all
 all: kuka_experimental/kuka_lbr_iiwa_support/all
 all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/all
 all: Gazebo_utils/ros_controllers/force_torque_sensor_controller/all
+all: camera_processing/all
 all: Gazebo_utils/ros_controllers/imu_sensor_controller/all
 all: Gazebo_utils/general-message-pkgs/object_msgs/all
 all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/all
@@ -102,6 +103,7 @@ preinstall: kuka_experimental/kuka_kr3_support/preinstall
 preinstall: kuka_experimental/kuka_lbr_iiwa_support/preinstall
 preinstall: Gazebo_utils/general-message-pkgs/path_navigation_msgs/preinstall
 preinstall: Gazebo_utils/ros_controllers/force_torque_sensor_controller/preinstall
+preinstall: camera_processing/preinstall
 preinstall: Gazebo_utils/ros_controllers/imu_sensor_controller/preinstall
 preinstall: Gazebo_utils/general-message-pkgs/object_msgs/preinstall
 preinstall: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/preinstall
@@ -140,6 +142,7 @@ clean: kuka_experimental/kuka_kr3_support/clean
 clean: kuka_experimental/kuka_lbr_iiwa_support/clean
 clean: Gazebo_utils/general-message-pkgs/path_navigation_msgs/clean
 clean: Gazebo_utils/ros_controllers/force_torque_sensor_controller/clean
+clean: camera_processing/clean
 clean: Gazebo_utils/ros_controllers/imu_sensor_controller/clean
 clean: Gazebo_utils/general-message-pkgs/object_msgs/clean
 clean: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/clean
@@ -540,11 +543,6 @@ Gazebo_utils/ros_controllers/imu_sensor_controller/preinstall:
 
 # Recursive "clean" directory target.
 Gazebo_utils/ros_controllers/imu_sensor_controller/clean: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir/clean
-Gazebo_utils/ros_controllers/imu_sensor_controller/clean: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-Gazebo_utils/ros_controllers/imu_sensor_controller/clean: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-Gazebo_utils/ros_controllers/imu_sensor_controller/clean: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-Gazebo_utils/ros_controllers/imu_sensor_controller/clean: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-Gazebo_utils/ros_controllers/imu_sensor_controller/clean: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 
 .PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/clean
 
@@ -705,6 +703,28 @@ Robotiq-grippers/robotiq_3f_description/preinstall:
 Robotiq-grippers/robotiq_3f_description/clean:
 
 .PHONY : Robotiq-grippers/robotiq_3f_description/clean
+
+#=============================================================================
+# Directory level rules for directory camera_processing
+
+# Recursive "all" directory target.
+camera_processing/all:
+
+.PHONY : camera_processing/all
+
+# Recursive "preinstall" directory target.
+camera_processing/preinstall:
+
+.PHONY : camera_processing/preinstall
+
+# Recursive "clean" directory target.
+camera_processing/clean: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+camera_processing/clean: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+camera_processing/clean: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+camera_processing/clean: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+camera_processing/clean: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : camera_processing/clean
 
 #=============================================================================
 # Directory level rules for directory gtest
@@ -3398,6 +3418,141 @@ Gazebo_utils/ros_controllers/force_torque_sensor_controller/CMakeFiles/force_tor
 .PHONY : Gazebo_utils/ros_controllers/force_torque_sensor_controller/CMakeFiles/force_torque_sensor_controller.dir/clean
 
 #=============================================================================
+# Target rules for target camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# clean rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# clean rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# clean rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# clean rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# clean rule for target.
+camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+.PHONY : camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
 # Target rules for target Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir
 
 # All Build rule for target.
@@ -3423,141 +3578,6 @@ imu_sensor_controller: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeF
 Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir/clean:
 	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir/clean
 .PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/imu_sensor_controller.dir/clean
-
-#=============================================================================
-# Target rules for target Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# clean rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# clean rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_lisp"
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# clean rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_eus"
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# clean rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_cpp"
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joshua/ROS_projects/pickAndPlaceKuka/build/CMakeFiles 0
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# clean rule for target.
-Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
-.PHONY : Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
 # Target rules for target Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/_object_msgs_generate_messages_check_deps_Object.dir
@@ -4313,11 +4333,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/set_gazebo_physics_client.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -4422,11 +4442,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_nod
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_node.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -4533,11 +4553,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gaze
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/cube_spawner.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -4643,11 +4663,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -4945,11 +4965,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all:
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/gazebo_test_tools.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -5569,11 +5589,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/fake_object_recognizer_cmd.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -6034,11 +6054,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helper
 Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_version_helpers/CMakeFiles/gazebo_version_helpers.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
@@ -6128,11 +6148,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin/CMakeFiles/gazebo_grasp_fix.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
@@ -6306,11 +6326,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeFiles/gazebo_grasp_plugin_ros_republisher_node.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
@@ -6685,11 +6705,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plug
 Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_world_plugin_loader/CMakeFiles/gazebo_world_plugin_loader.dir/all: Gazebo_utils/gazebo-pkgs/gazebo_test_tools/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
@@ -6774,11 +6794,11 @@ Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_c
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/register_object_client.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -6861,11 +6881,11 @@ Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadca
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_tf_broadcaster_node.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -6949,11 +6969,11 @@ Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_nodejs.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/general-message-pkgs/object_msgs_tools/CMakeFiles/object_msgs_tools.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -7046,11 +7066,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_i
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_request_object_info.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -7163,11 +7183,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.di
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_map_publisher.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
@@ -7280,11 +7300,11 @@ Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/actionlib_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/general-message-pkgs/path_navigation_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
-Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/ros_controllers/imu_sensor_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: camera_processing/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_py.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/shape_msgs_generate_messages_nodejs.dir/all
 Gazebo_utils/gazebo-pkgs/gazebo_state_plugins/CMakeFiles/gazebo_object_info.dir/all: Gazebo_utils/general-message-pkgs/object_msgs/CMakeFiles/object_recognition_msgs_generate_messages_lisp.dir/all
