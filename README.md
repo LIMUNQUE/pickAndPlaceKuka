@@ -1,12 +1,8 @@
 # vision-robot-arm
 
-Continuation of project  [Vision-robot-arm](https://github.com/LIMUNQUE/vision-robot-arm/tree/master)
-The purpose of this project is to create a pick and place color classifier, using artificial vision from opencv.
-This ARM was done in ROS Noetic as the final assignment for the serial and mobile robots course 
+Continuation of the [Vision-Robot-Arm Project:](https://github.com/LIMUNQUE/vision-robot-arm/tree/master) The purpose of this project is to create a pick-and-place color classifier using artificial vision with OpenCV. This robotic arm (ARM) was developed in ROS Noetic as the final assignment for the Serial and Mobile Robots course. We’ve chosen the KUKA KR3 model design for lightweight tasks.
 
-We are using the kuka kr3 model design for small duty
-
-for a short test you can use:
+For a quick test, you can use the following instructions:
 
 ```sh
 roslaunch kr3_gazebo kr3_gazebo.launch gripper_2f:=true camera:=true
