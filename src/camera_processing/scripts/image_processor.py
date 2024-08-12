@@ -43,7 +43,7 @@ class ImageProcessor:
         maskAzul = cv2.inRange(frameHSV, self.azulBajo, self.azulAlto)
         
         # Dibujar contornos y centros de los objetos azules
-        result = self.dibujar(cv_image, maskAzul, (255,0,0))
+        result = self.dibujar(cv_image, maskAzul, (210,162,26))
         
         # Mostrar la imagen resultante
         cv2.imshow("Blue Object Detection", result)
