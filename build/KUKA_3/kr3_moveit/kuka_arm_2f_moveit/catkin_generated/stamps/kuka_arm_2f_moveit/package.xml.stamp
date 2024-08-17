@@ -5,8 +5,8 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the kr3_main with the MoveIt Motion Planning Framework
   </description>
-  <author email="josalcob@espol.edu.ec">Joshua Alexander Cobos Valle</author>
-  <maintainer email="josalcob@espol.edu.ec">Joshua Alexander Cobos Valle</maintainer>
+  <author email="josalcob@espol.edu.ec">Joshua Cobos Valle</author>
+  <maintainer email="josalcob@espol.edu.ec">Joshua Cobos Valle</maintainer>
 
   <license>BSD</license>
 

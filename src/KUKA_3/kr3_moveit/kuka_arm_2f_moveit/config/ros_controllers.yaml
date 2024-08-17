@@ -16,7 +16,6 @@ controller_list:
     type: GripperCommand
     joints: 
       - finger_joint
-
 arm_controller:
   type: position_controllers/JointTrajectoryController
   joints:

@@ -6,6 +6,6 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="gripper arm_controller "/>
+    output="screen" args="kuka_arm_controller gripper_controller "/>
 
 </launch>

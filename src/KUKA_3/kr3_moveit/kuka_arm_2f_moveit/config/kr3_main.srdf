@@ -45,26 +45,7 @@
     <passive_joint name="right_outer_knuckle_joint"/>
     <passive_joint name="right_inner_finger_joint"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
-    <disable_collisions link1="base_link" link2="camera" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
-    <disable_collisions link1="camera" link2="coupling_link" reason="Never"/>
-    <disable_collisions link1="camera" link2="left_inner_finger" reason="Never"/>
-    <disable_collisions link1="camera" link2="left_inner_finger_pad" reason="Never"/>
-    <disable_collisions link1="camera" link2="left_inner_knuckle" reason="Never"/>
-    <disable_collisions link1="camera" link2="left_outer_finger" reason="Never"/>
-    <disable_collisions link1="camera" link2="left_outer_knuckle" reason="Never"/>
-    <disable_collisions link1="camera" link2="link_1" reason="Never"/>
-    <disable_collisions link1="camera" link2="link_2" reason="Never"/>
-    <disable_collisions link1="camera" link2="link_3" reason="Never"/>
-    <disable_collisions link1="camera" link2="link_4" reason="Never"/>
-    <disable_collisions link1="camera" link2="link_5" reason="Never"/>
-    <disable_collisions link1="camera" link2="link_6" reason="Never"/>
-    <disable_collisions link1="camera" link2="right_inner_finger" reason="Never"/>
-    <disable_collisions link1="camera" link2="right_inner_finger_pad" reason="Never"/>
-    <disable_collisions link1="camera" link2="right_inner_knuckle" reason="Never"/>
-    <disable_collisions link1="camera" link2="right_outer_finger" reason="Never"/>
-    <disable_collisions link1="camera" link2="right_outer_knuckle" reason="Never"/>
-    <disable_collisions link1="camera" link2="robotiq_arg2f_base_link" reason="Never"/>
     <disable_collisions link1="coupling_link" link2="left_inner_finger" reason="Never"/>
     <disable_collisions link1="coupling_link" link2="left_inner_finger_pad" reason="Never"/>
     <disable_collisions link1="coupling_link" link2="left_inner_knuckle" reason="Never"/>

@@ -6,7 +6,7 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" textfile="$(find kr3_gazebo)/urdf/kr3_main.urdf"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro gripper_2f:=true camera:=false '$(find kr3_gazebo)/urdf/kr3_main.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
   <param name="$(arg robot_description)_semantic" textfile="$(find kuka_arm_2f_moveit)/config/kr3_main.srdf" />

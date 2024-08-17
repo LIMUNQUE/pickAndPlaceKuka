@@ -7,10 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/joshua/ROS_projects/pickAndPlaceKuka/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/joshua/ROS_projects/pickAndPlaceKuka/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/joshua/ROS_projects/pickAndPlaceKuka/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/joshua/ROS_projects/pickAndPlaceKuka/build'
-export PYTHONPATH="/home/joshua/ROS_projects/pickAndPlaceKuka/devel/lib/python3/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES='/home/joshua/ROS_projects/pickAndPlaceKuka/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/joshua/ROS_projects/pickAndPlaceKuka/src:$ROS_PACKAGE_PATH"
