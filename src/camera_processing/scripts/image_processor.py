@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 import rospy
 from sensor_msgs.msg import Image
+from std_msgs.msg import Float32MultiArray
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
+
+M_homography = np.array([
+    [-4.32451535e-03,  7.24517618e-05,  1.36641253e+00],
+    [4.12785446e-05, -4.30712150e-03,  1.54470356e+00],
+    [7.78377698e-05,  1.56970603e-04,  1.00000000e+00]
+])
 
 class ImageProcessor:
     def __init__(self):
         self.bridge = CvBridge()
         self.image_sub = rospy.Subscriber("/camera1/color/image_raw", Image, self.image_callback)
+        self.coords_pub = rospy.Publisher('/blue_object_coords', Float32MultiArray, queue_size=10)
         
-        # Definir los rangos de color azul en HSV
         self.azulBajo = np.array([100,100,20], np.uint8)
         self.azulAlto = np.array([125,255,255], np.uint8)
         
@@ -20,7 +27,7 @@ class ImageProcessor:
         contornos, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         for c in contornos:
             area = cv2.contourArea(c)
-            if area > 3000:
+            if area > 200:
                 M = cv2.moments(c)
                 if M["m00"] == 0:
                     M["m00"] = 1
@@ -30,22 +37,25 @@ class ImageProcessor:
                 cv2.circle(frame, (x,y), 7, (0,255,0), -1)
                 cv2.putText(frame, f'{x},{y}', (x+10,y), self.font, 0.75, (0,255,0), 1, cv2.LINE_AA)
                 cv2.drawContours(frame, [nuevoContorno], 0, color, 3)
+                
+                new_point_pixel = np.array([[x, y]], dtype=np.float32)
+                new_point_global = cv2.transform(np.array([new_point_pixel]), M_homography)
+                
+                scale = new_point_global[0][0][2]
+                global_x = new_point_global[0][0][0] / scale
+                global_y = new_point_global[0][0][1] / scale
+                
+                # Publicar las coordenadas globales
+                coord_msg = Float32MultiArray()
+                coord_msg.data = [global_x, global_y]
+                self.coords_pub.publish(coord_msg)
         return frame
 
     def image_callback(self, msg):
-        # Convertir la imagen ROS a una imagen OpenCV
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-        
-        # Convertir la imagen a HSV
         frameHSV = cv2.cvtColor(cv_image, cv2.COLOR_BGR2HSV)
-        
-        # Crear una máscara para el color azul
         maskAzul = cv2.inRange(frameHSV, self.azulBajo, self.azulAlto)
-        
-        # Dibujar contornos y centros de los objetos azules
         result = self.dibujar(cv_image, maskAzul, (210,162,26))
-        
-        # Mostrar la imagen resultante
         cv2.imshow("Blue Object Detection", result)
         cv2.waitKey(1)
 
@@ -56,3 +66,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
