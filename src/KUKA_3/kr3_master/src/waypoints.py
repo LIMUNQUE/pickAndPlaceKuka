@@ -20,33 +20,33 @@ waypoints = []
 
 pose_target = geometry_msgs.msg.Pose()
 pose_target.orientation.w = 1.0
-pose_target.position.x = 0.5
-pose_target.position.y = -0.5
-pose_target.position.z = 1.18
+pose_target.position.x = 0.2
+pose_target.position.y = -0.2
+pose_target.position.z = 0.18
 
 waypoints.append(copy.deepcopy(pose_target))
 
 pose_target = geometry_msgs.msg.Pose()
 pose_target.orientation.w = 1.0
-pose_target.position.x = 0.5
-pose_target.position.y = 0.7
-pose_target.position.z = 1.2
+pose_target.position.x = 0.2
+pose_target.position.y = 0.35
+pose_target.position.z = 0.2
 
 waypoints.append(copy.deepcopy(pose_target))
 
 pose_target = geometry_msgs.msg.Pose()
 pose_target.orientation.w = 1.0
-pose_target.position.x = -0.5
-pose_target.position.y = 0.7
-pose_target.position.z = 1.2
+pose_target.position.x = -0.2
+pose_target.position.y = 0.35
+pose_target.position.z = 0.2
 
 waypoints.append(copy.deepcopy(pose_target))
 
 pose_target = geometry_msgs.msg.Pose()
 pose_target.orientation.w = 1.0
-pose_target.position.x = 0.5
-pose_target.position.y = 0.7
-pose_target.position.z = 1.2
+pose_target.position.x = 0.2
+pose_target.position.y = 0.35
+pose_target.position.z = 0.2
 
 waypoints.append(copy.deepcopy(pose_target))
 
@@ -61,9 +61,9 @@ waypoints.append(copy.deepcopy(pose_target))
 
 pose_target = geometry_msgs.msg.Pose()
 pose_target.orientation.w = 1.0
-pose_target.position.x = 0.5
-pose_target.position.y = -0.5
-pose_target.position.z = 1.18
+pose_target.position.x = 0.2
+pose_target.position.y = -0.2
+pose_target.position.z = 0.18
 
 waypoints.append(copy.deepcopy(pose_target))
 
