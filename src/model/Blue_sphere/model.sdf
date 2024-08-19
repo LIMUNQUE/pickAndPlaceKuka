@@ -1,16 +1,16 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
-  <model name='unit_box'>
+  <model name='Blue_sphere'>
     <link name='link'>
       <inertial>
-        <mass>2</mass>
+        <mass>1</mass>
         <inertia>
-          <ixx>0.00308808</ixx>
+          <ixx>0.1</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
-          <iyy>0.00280921</iyy>
+          <iyy>0.1</iyy>
           <iyz>0</iyz>
-          <izz>0.00131664</izz>
+          <izz>0.1</izz>
         </inertia>
         <pose>0 0 0 0 -0 0</pose>
       </inertial>
@@ -21,9 +21,9 @@
       <gravity>1</gravity>
       <visual name='visual'>
         <geometry>
-          <box>
-            <size>0.055797 0.069185 0.307226</size>
-          </box>
+          <sphere>
+            <radius>0.0807605</radius>
+          </sphere>
         </geometry>
         <material>
           <script>
@@ -47,9 +47,9 @@
         <max_contacts>10</max_contacts>
         <pose>0 0 0 0 -0 0</pose>
         <geometry>
-          <box>
-            <size>0.055797 0.069185 0.307226</size>
-          </box>
+          <sphere>
+            <radius>0.08076</radius>
+          </sphere>
         </geometry>
         <surface>
           <friction>

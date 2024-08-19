@@ -6,6 +6,7 @@ import rospy
 import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
+import tf.transformations as tf
 
 moveit_commander.roscpp_initialize(sys.argv)
 rospy.init_node('move_group_python_interface_tutorial', anonymous=True)
@@ -15,55 +16,24 @@ scene = moveit_commander.PlanningSceneInterface()
 group = moveit_commander.MoveGroupCommander("kuka_arm")
 display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path', moveit_msgs.msg.DisplayTrajectory, queue_size=1)
 
+roll = 0
+pitch = 1.57  # 90 grados para que esté mirando hacia abajo
+yaw = 0
 
 waypoints = []
 
 pose_target = geometry_msgs.msg.Pose()
-pose_target.orientation.w = 1.0
-pose_target.position.x = 0.2
-pose_target.position.y = -0.2
-pose_target.position.z = 0.18
-
-waypoints.append(copy.deepcopy(pose_target))
-
-pose_target = geometry_msgs.msg.Pose()
-pose_target.orientation.w = 1.0
-pose_target.position.x = 0.2
-pose_target.position.y = 0.35
-pose_target.position.z = 0.2
-
-waypoints.append(copy.deepcopy(pose_target))
-
-pose_target = geometry_msgs.msg.Pose()
-pose_target.orientation.w = 1.0
-pose_target.position.x = -0.2
-pose_target.position.y = 0.35
-pose_target.position.z = 0.2
-
-waypoints.append(copy.deepcopy(pose_target))
-
-pose_target = geometry_msgs.msg.Pose()
-pose_target.orientation.w = 1.0
-pose_target.position.x = 0.2
-pose_target.position.y = 0.35
-pose_target.position.z = 0.2
-
-waypoints.append(copy.deepcopy(pose_target))
-
-#pose_target = geometry_msgs.msg.Pose()
 #pose_target.orientation.w = 1.0
-#pose_target.position.x = -1.0
-#pose_target.position.y = -0.7
-#pose_target.position.z = 1.2
+pose_target.position.x = 0.497586
+pose_target.position.y = 0.281507
+pose_target.position.z = 0.3
 
-#waypoints.append(copy.deepcopy(pose_target))
+quat = tf.quaternion_from_euler(roll, pitch, yaw)
 
-
-pose_target = geometry_msgs.msg.Pose()
-pose_target.orientation.w = 1.0
-pose_target.position.x = 0.2
-pose_target.position.y = -0.2
-pose_target.position.z = 0.18
+pose_target.orientation.x = quat[0]
+pose_target.orientation.y = quat[1]
+pose_target.orientation.z = quat[2]
+pose_target.orientation.w = quat[3]
 
 waypoints.append(copy.deepcopy(pose_target))
 
@@ -74,21 +44,21 @@ waypoints.append(copy.deepcopy(pose_target))
 # ignoring the check for infeasible jumps in joint space, which is sufficient
 # for this tutorial.
 fraction = 0.0
-maxtries = 200
+maxtries = 400
 attempts = 0
-(plan, fraction) = group.compute_cartesian_path(
-                                   waypoints,   # waypoints to follow
-                                   0.01,        # eef_step
-                                   0.0)         # jump_threshold
-#while fraction < 1.0 and attempts < maxtries:
-#    (plan, fraction) = group.compute_cartesian_path(
+#(plan, fraction) = group.compute_cartesian_path(
 #                                   waypoints,   # waypoints to follow
 #                                   0.01,        # eef_step
 #                                   0.0)         # jump_threshold
+while fraction < 1.0 and attempts < maxtries:
+    (plan, fraction) = group.compute_cartesian_path(
+                                   waypoints,   # waypoints to follow
+                                   0.01,        # eef_step
+                                   0.0)         # jump_threshold
     
-#    attempts+=1
-#    if attempts % 10 == 0:
-#        rospy.loginfo("Still trying after " + str(attempts) + " attempts...")
+    attempts+=1
+    if attempts % 10 == 0:
+        rospy.loginfo("Still trying after " + str(attempts) + " attempts...")
 
 group.execute(plan, wait=True)
 # Note: We are just planning, not asking move_group to actually move the robot yet:

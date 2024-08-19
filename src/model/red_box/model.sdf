@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <sdf version='1.7'>
-  <model name='unit_box'>
+  <model name='red_box'>
     <link name='link'>
       <inertial>
-        <mass>2</mass>
+        <mass>1</mass>
         <inertia>
           <ixx>0.00308808</ixx>
           <ixy>0</ixy>
@@ -27,14 +27,14 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/Blue</name>
+            <name>Gazebo/Red</name>
             <uri>file://media/materials/scripts/gazebo.material</uri>
           </script>
           <shader type='pixel'>
             <normal_map>__default__</normal_map>
           </shader>
-          <ambient>0 0 1 1</ambient>
-          <diffuse>0 0 1 1</diffuse>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
           <specular>0.1 0.1 0.1 1</specular>
           <emissive>0 0 0 1</emissive>
         </material>
