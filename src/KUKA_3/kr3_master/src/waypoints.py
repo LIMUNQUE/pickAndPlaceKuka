@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-
+#Script de prueba
 import sys
 import copy
 import rospy

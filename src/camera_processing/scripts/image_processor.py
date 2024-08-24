@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#Script para el procesamiento de la camara
 import rospy
 from sensor_msgs.msg import Image
 from std_msgs.msg import Float32MultiArray
