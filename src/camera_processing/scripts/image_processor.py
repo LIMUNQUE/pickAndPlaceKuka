@@ -12,8 +12,6 @@ M_homography = np.array([
     [7.78377698e-05,  1.56970603e-04,  1.00000000e+00]
 ])
 
-gripper_length = 0.05
-
 class ImageProcessor:
     def __init__(self):
         self.bridge = CvBridge()
@@ -50,7 +48,7 @@ class ImageProcessor:
                 
                 scale = new_point_global[0][0][2]
                 global_y = new_point_global[0][0][0] / scale
-                global_x = (new_point_global[0][0][1] / scale) - gripper_length
+                global_x = (new_point_global[0][0][1] / scale)
                 
                 # Publicar las coordenadas globales y el nombre (1 para azul, 2 para rojo)
                 coord_msg = Float32MultiArray()
