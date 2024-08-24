@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Este es el mismo script para mover el brazo pero uso scipy para graficar la posiciòn de los motores
+#Este es el mismo script para mover el brazo pero uso scipy para graficar la posiciòn de los motores (lo pidiò el profe)
 import sys
 import rospy
 import moveit_commander
